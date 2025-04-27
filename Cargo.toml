@@ -1,17 +1,27 @@
 [package]
-name = "my-rust-template"
+name = "my-axum-template"
 description = "template for new rust projects"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [profile.release]
 strip = true
-opt-level = "z"
+opt-level = 3
 lto = true
 codegen-units = 1
 
 [dependencies]
+axum = "0.8.3"
+chrono = { version = "0.4.40", features = ["serde"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+serde_urlencoded = "0.7.1"
+sqlx = { version = "0.8.5", default-features = false, features = ["derive", "runtime-tokio", "tls-none", "postgres"] }
+sqlx-core = { version = "0.8.5", features = ["migrate"] }
+sqlx-postgres = { version = "0.8.5", features = ["migrate", "chrono", "uuid"] }
+tokio = { version = "1.44.2", features = ["full"] }
+uuid = { version = "1.16.0", features = ["serde"] }
 
 [dev-dependencies]
 cargo-husky = { version = "^1.5.0", default-features = false, features = ["user-hooks"] }

@@ -1,4 +1,4 @@
-# my-rust-template
+# my-axum-template
 template for new rust projects
 
 for the project description updating run

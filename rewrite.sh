@@ -16,14 +16,14 @@ rewrite() {
 	fi
 }
 
-rewrite "my-rust-template" "$name" "scripts.sh"
+rewrite "my-axum-template" "$name" "scripts.sh"
 
-rewrite "name = \"my-rust-template\"" "name = \"$name\"" "Cargo.toml"
-rewrite "name = \"my-rust-template\"" "name = \"$name\"" "Cargo.lock"
+rewrite "name = \"my-axum-template\"" "name = \"$name\"" "Cargo.toml"
+rewrite "name = \"my-axum-template\"" "name = \"$name\"" "Cargo.lock"
 
 rewrite "description = \"template for new rust projects\"" "description = \"$description\"" "Cargo.toml"
 
-rewrite "# my-rust-template" "# $name" "README.md"
+rewrite "# my-axum-template" "# $name" "README.md"
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	sed -i '' '3,7d' README.md
 else
